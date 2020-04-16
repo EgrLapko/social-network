@@ -1,0 +1,15 @@
+.sidebar {
+    display: grid;
+    grid-area: sidebar;
+    background-color: rgba(214, 214, 214, .3);
+    align-items: center;
+    align-content: center;
+    &__menu {
+        display: grid;
+        grid-template-rows: auto;
+        margin-left: 20%;
+        .menu-item {
+            margin: .5rem 0;
+        }
+    }
+}
