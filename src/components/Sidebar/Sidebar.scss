@@ -1,15 +1,35 @@
 .sidebar {
     display: grid;
+    grid-template-columns: 1fr;
     grid-area: sidebar;
     background-color: rgba(214, 214, 214, .3);
-    align-items: center;
-    align-content: center;
+    align-items: flex-start;
+    justify-content: center;
+    justify-items: center;
+    box-shadow: 10px 0px 20px rgba(55, 55, 55, .1);
+    position: relative;
+    z-index: 9;
+    height: 100%;
+    width: 15vw;
+    transition: .3s;
     &__menu {
+        width: 70%;
         display: grid;
         grid-template-rows: auto;
-        margin-left: 20%;
+        position: sticky;
+        z-index: 1;
+        top: 6rem;
+        margin-top: 5rem;
         .menu-item {
-            margin: .5rem 0;
+            justify-self: flex-start;
+            margin: .6rem;
+            .link {
+                font-size: 1.1rem;
+                color: rgba(108, 108, 108, 1);
+            }
+            .link-active {
+                color: black;
+            }
         }
     }
 }

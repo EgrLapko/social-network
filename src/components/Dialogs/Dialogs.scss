@@ -1,3 +1,17 @@
 .dialogs {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    height: 100%;
+    &__items {
+        padding: 1rem;
+        .dialog {
+        }
+    }
+    &__messages {
+        padding: 1rem;
+        border-left: 1px solid rgba(55, 55, 55, .1);
+        .message {
 
+        }
+    }
 }

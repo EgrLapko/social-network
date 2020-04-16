@@ -2,12 +2,14 @@
 @import './components/Profile/Profile.scss';
 @import './components/Sidebar/Sidebar.scss';
 @import './components/Dialogs/Dialogs.scss';
+@import './components/News/News.scss';
+@import './components/Music/Music.scss';
+@import './components/Settings/Settings.scss';
 
 // ------------------------------------------------------------ GENERAL
 * {
     margin: 0;
     padding: 0;
-    list-style-type: none;
 }
 
 a {
@@ -19,9 +21,14 @@ body {
     background-color: rgba(248, 248, 248, 1);
 }
 
+ul {
+    list-style-type: none;
+    margin: 0;
+}
+
 .app-wrapper {
     display: grid;
-    grid-template-columns: 2fr 10fr;
+    grid-template-columns: auto 1fr;
     grid-template-rows: 4rem 1fr;
     grid-template-areas: 
         "header header"
