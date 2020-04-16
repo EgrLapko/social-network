@@ -98,15 +98,59 @@
 .dialogs {
   display: grid;
   grid-template-columns: 1fr 5fr;
+  grid-template-rows: 1fr;
   height: 100%;
 }
 .dialogs__items {
-  padding: 1rem;
+  padding: 0.5rem;
+}
+.dialogs__items .dialog {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 1rem 0;
+  padding: 0.4rem 0;
+  justify-items: center;
+  align-items: center;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.dialogs__items .dialog:hover {
+  background-color: rgba(55, 55, 55, 0.2);
+}
+.dialogs__items .dialog__avatar {
+  width: 4rem;
+  height: 4rem;
+  overflow: hidden;
+  border-radius: 50%;
+}
+.dialogs__items .dialog__avatar img {
+  width: 100%;
+}
+.dialogs__items .dialog__username {
+  justify-self: flex-start;
 }
 .dialogs__messages {
   padding: 1rem;
+  display: grid;
+  grid-template-rows: 5fr 1fr;
   border-left: 1px solid rgba(55, 55, 55, 0.1);
 }
+.dialogs__messages .textinput {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  justify-items: flex-start;
+  align-items: center;
+  padding: 1rem;
+}
+.dialogs__messages .textinput .input-area {
+  height: 100%;
+  width: 100%;
+}
+.dialogs__messages .textinput .btn {
+  justify-self: flex-start;
+  margin-left: 1rem;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -124,6 +168,23 @@ body {
 ul {
   list-style-type: none;
   margin: 0;
+}
+
+.btn {
+  background-color: unset;
+  border: 1px solid rgba(78, 78, 78, 0.5);
+  padding: 1rem;
+  cursor: pointer;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  transition: 0.3s;
+}
+.btn:hover {
+  background-color: #4e4e4e;
+  color: #f8f8f8;
+}
+.btn:focus {
+  outline: none;
 }
 
 .app-wrapper {

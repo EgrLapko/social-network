@@ -26,6 +26,23 @@ ul {
     margin: 0;
 }
 
+.btn {
+    background-color: unset;
+    border: 1px solid rgba(78, 78, 78, .5);
+    padding: 1rem;
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    transition: .3s;
+    &:hover {
+        background-color: rgba(78, 78, 78, 1);
+        color: rgba(248, 248, 248, 1);
+    }
+    &:focus {
+        outline: none;
+    }
+}
+
 .app-wrapper {
     display: grid;
     grid-template-columns: auto 1fr;
