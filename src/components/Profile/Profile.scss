@@ -16,10 +16,31 @@
   }
   .posts-section {
       padding: 1rem;
+      min-height: 30vh;
       .posts-title {
-
+        font-weight: 300;
       }
       .posts-panel {
+        width: 100%;
+        display: grid;
+        justify-items: flex-start;
+        align-items: center;
+        padding: 1rem;
+        textarea {
+          outline: none;
+          width: 45%;
+          height: 7vh;
+          border-radius: 10px;
+          border: 1px solid rgba(165, 138, 138, 0.3);
+          background-color: rgba(248, 248, 248, 1);
+          padding: 1rem;
+          font-size: 1.4rem;
+        }
+        .btn {
+          margin: 1rem 0;
+          font-size: 1rem;
+          padding: .7rem;
+        }
       }
       .posts-container {
         .post {

@@ -5,20 +5,27 @@ import * as serviceWorker from "./serviceWorker";
 
 import { BrowserRouter } from "react-router-dom";
 
-import { state } from "./redux/state";
+import { Provider } from "react-redux";
+import { createStore, compose, applyMiddleware } from "redux";
+import thunk from "redux-thunk";
 
-const { postData } = state.profilePage;
-const { dialogUsers, messages } = state.dialogsPage;
+import { rootReducer } from "./redux/reducers/rootReducer";
+
+const store = createStore(
+  rootReducer,
+  compose(
+    applyMiddleware(thunk),
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  )
+);
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <App
-        posts={postData}
-        dialogUsers={dialogUsers}
-        messages={messages}
-      />
-    </BrowserRouter>
+    <Provider store={store}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </Provider>
   </React.StrictMode>,
   document.getElementById("root")
 );

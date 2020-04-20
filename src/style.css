@@ -33,6 +33,32 @@
 }
 .profile-content .posts-section {
   padding: 1rem;
+  min-height: 30vh;
+}
+.profile-content .posts-section .posts-title {
+  font-weight: 300;
+}
+.profile-content .posts-section .posts-panel {
+  width: 100%;
+  display: grid;
+  justify-items: flex-start;
+  align-items: center;
+  padding: 1rem;
+}
+.profile-content .posts-section .posts-panel textarea {
+  outline: none;
+  width: 45%;
+  height: 7vh;
+  border-radius: 10px;
+  border: 1px solid rgba(165, 138, 138, 0.3);
+  background-color: #f8f8f8;
+  padding: 1rem;
+  font-size: 1.4rem;
+}
+.profile-content .posts-section .posts-panel .btn {
+  margin: 1rem 0;
+  font-size: 1rem;
+  padding: 0.7rem;
 }
 .profile-content .posts-section .posts-container .post {
   display: grid;
@@ -163,6 +189,7 @@ a {
 
 body {
   background-color: #f8f8f8;
+  font-family: "Open Sans", sans-serif;
 }
 
 ul {
