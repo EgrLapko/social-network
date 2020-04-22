@@ -25,7 +25,6 @@
         display: grid;
         justify-items: flex-start;
         align-items: center;
-        padding: 1rem;
         textarea {
           outline: none;
           width: 45%;
@@ -34,6 +33,7 @@
           border: 1px solid rgba(165, 138, 138, 0.3);
           background-color: rgba(248, 248, 248, 1);
           padding: 1rem;
+          margin: 1rem 0;
           font-size: 1.4rem;
         }
         .btn {

@@ -43,7 +43,6 @@
   display: grid;
   justify-items: flex-start;
   align-items: center;
-  padding: 1rem;
 }
 .profile-content .posts-section .posts-panel textarea {
   outline: none;
@@ -53,6 +52,7 @@
   border: 1px solid rgba(165, 138, 138, 0.3);
   background-color: #f8f8f8;
   padding: 1rem;
+  margin: 1rem 0;
   font-size: 1.4rem;
 }
 .profile-content .posts-section .posts-panel .btn {
@@ -88,15 +88,15 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-area: sidebar;
-  background-color: rgba(214, 214, 214, 0.3);
+  background-color: #f8f8f8;
   align-items: flex-start;
   justify-content: center;
   justify-items: center;
   box-shadow: 10px 0px 20px rgba(55, 55, 55, 0.1);
   position: relative;
   z-index: 9;
-  height: 100%;
-  width: 15vw;
+  min-height: 90vh;
+  width: 10vw;
   transition: 0.3s;
 }
 .sidebar__menu {
@@ -112,6 +112,9 @@
 .sidebar__menu .menu-item {
   justify-self: flex-start;
   margin: 0.6rem;
+}
+.sidebar__menu .menu-item.setting {
+  margin-top: 2rem;
 }
 .sidebar__menu .menu-item .link {
   font-size: 1.1rem;
@@ -177,6 +180,56 @@
   margin-left: 1rem;
 }
 
+.users {
+  display: grid;
+  grid-gap: 1rem;
+  justify-items: center;
+  margin: 2rem;
+}
+.users .single-user {
+  display: grid;
+  grid-template-columns: 10vw 20vw;
+  align-items: center;
+  justify-items: center;
+  padding: 1rem;
+  background-color: #f6f6f6;
+  box-shadow: 0 10px 30px #d6d6d6;
+  border-radius: 15px;
+}
+.users .single-user__photo {
+  width: 7rem;
+  height: 7rem;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.users .single-user__photo img {
+  width: 100%;
+  object-fit: cover;
+}
+.users .single-user__info {
+  justify-self: flex-start;
+  color: #484848;
+  grid-row: 1/3;
+  grid-column: 2/3;
+  margin-left: 1rem;
+}
+.users .single-user__info .user-name {
+  font-size: 1.1rem;
+}
+.users .single-user__info .user-status {
+  color: rgba(72, 72, 72, 0.5);
+  font-size: 0.9rem;
+}
+.users .single-user__info .user-location {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+.users .single-user .btn {
+  font-size: 0.8rem;
+  padding: 0.7rem;
+  margin-top: 0.5rem;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -212,6 +265,11 @@ ul {
 }
 .btn:focus {
   outline: none;
+}
+.btn.followed {
+  background-color: #52baae;
+  border: 1px solid rgba(78, 78, 78, 0);
+  color: #f8f8f8;
 }
 
 .app-wrapper {

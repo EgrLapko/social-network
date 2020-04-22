@@ -20,6 +20,11 @@ export const SideBar = () => {
           </NavLink>
         </li>
         <li className="menu-item">
+          <NavLink className="link" to="/users" activeClassName="link-active">
+            Users
+          </NavLink>
+        </li>
+        <li className="menu-item">
           <NavLink className="link" to="/news" activeClassName="link-active">
             News
           </NavLink>
@@ -29,7 +34,7 @@ export const SideBar = () => {
             Music
           </NavLink>
         </li>
-        <li className="menu-item">
+        <li className="menu-item setting">
           <NavLink
             className="link"
             to="/settings"

@@ -5,6 +5,7 @@
 @import './components/News/News.scss';
 @import './components/Music/Music.scss';
 @import './components/Settings/Settings.scss';
+@import './components/Users/Users.scss';
 
 // ------------------------------------------------------------ GENERAL
 * {
@@ -41,6 +42,11 @@ ul {
     }
     &:focus {
         outline: none;
+    }
+    &.followed {
+        background-color: rgba(82, 186, 174);
+        border: 1px solid rgba(78, 78, 78, 0);
+        color: rgba(248, 248, 248, 1);
     }
 }
 

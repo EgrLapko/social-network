@@ -2,15 +2,15 @@
     display: grid;
     grid-template-columns: 1fr;
     grid-area: sidebar;
-    background-color: rgba(214, 214, 214, .3);
+    background-color: rgba(248, 248, 248, 1);
     align-items: flex-start;
     justify-content: center;
     justify-items: center;
     box-shadow: 10px 0px 20px rgba(55, 55, 55, .1);
     position: relative;
     z-index: 9;
-    height: 100%;
-    width: 15vw;
+    min-height: 90vh;
+    width: 10vw;
     transition: .3s;
     &__menu {
         width: 70%;
@@ -23,6 +23,9 @@
         .menu-item {
             justify-self: flex-start;
             margin: .6rem;
+            &.setting {
+                margin-top: 2rem;
+            }
             .link {
                 font-size: 1.1rem;
                 color: rgba(108, 108, 108, 1);

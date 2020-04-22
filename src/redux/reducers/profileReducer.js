@@ -9,7 +9,11 @@ const initialState = {
 const profileReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_POST:
-      return { ...state, posts: state.posts.concat([action.payload]), postBody: " " };
+      return {
+        ...state,
+        posts: state.posts.concat([action.payload]),
+        postBody: " ",
+      };
     case UPDATE_NEW_POST_TEXT:
       return {
         ...state,

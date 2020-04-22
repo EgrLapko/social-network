@@ -9,6 +9,7 @@ import Dialogs from "./components/Dialogs/Dialogs";
 import { News } from "./components/News/News";
 import { Music } from "./components/Music/Music";
 import { Settings } from "./components/Settings/Settings";
+import UsersContainer from "./components/Users/UsersContainer";
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
           <Route path="/profile" render={() => <Profile />} />
           <Route path="/dialogs" render={() => <Dialogs />} />
           <Route path="/news" component={News} />
+          <Route path="/users" component={UsersContainer} />
           <Route path="/music" component={Music} />
           <Route path="/settings" component={Settings} />
         </Switch>
