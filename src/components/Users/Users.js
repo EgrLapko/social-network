@@ -1,28 +1,14 @@
-import React, { useEffect } from "react";
-import * as axios from "axios";
+import React from "react";
 
-const Users = ({
-  users,
-  followUser,
-  unfollowUser,
-  setUsers,
+export const Users = ({
   totalUsersCount,
   pageSize,
   currentPage,
-  setCurrentPage,
-  setTotalUsersCount,
+  onPageChanged,
+  users,
+  followUser,
+  unfollowUser,
 }) => {
-  useEffect(() => {
-    axios
-      .get(
-        `https://social-network.samuraijs.com/api/1.0/users?page=${currentPage}&count=${pageSize}`
-      )
-      .then((response) => {
-        setUsers(response.data.items);
-        setTotalUsersCount(response.data.totalCount);
-      });
-  }, []);
-
   const imgUrl =
     "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQGb5uSA6_aI3eO5D6KDXk-FlqBSVx2jngKy3b5eM3bpBOOCCgc&usqp=CAU";
 
@@ -34,17 +20,6 @@ const Users = ({
   for (let i = 1; i <= 10; i++) {
     pages.push(i);
   }
-
-  const onPageChanged = (pageNumber) => {
-    setCurrentPage(pageNumber);
-    axios
-      .get(
-        `https://social-network.samuraijs.com/api/1.0/users?page=${pageNumber}&count=${pageSize}`
-      )
-      .then((response) => {
-        setUsers(response.data.items);
-      });
-  };
 
   return (
     <div className="users">
@@ -97,5 +72,3 @@ const Users = ({
     </div>
   );
 };
-
-export default Users;
