@@ -266,7 +266,7 @@ ul {
 .btn:focus {
   outline: none;
 }
-.btn.followed {
+.btn.selected {
   background-color: #52baae;
   border: 1px solid rgba(78, 78, 78, 0);
   color: #f8f8f8;
