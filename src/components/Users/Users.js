@@ -1,4 +1,5 @@
 import React from "react";
+import Spinner from "../common/Spinner/Spinner";
 
 export const Users = ({
   totalUsersCount,
