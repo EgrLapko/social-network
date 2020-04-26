@@ -1,5 +1,6 @@
 import React from "react";
 import Spinner from "../common/Spinner/Spinner";
+import { NavLink } from "react-router-dom";
 
 export const Users = ({
   totalUsersCount,
@@ -41,10 +42,12 @@ export const Users = ({
         return (
           <div className="single-user" key={user.id}>
             <div className="single-user__photo">
-              <img
-                src={user.photos.small != null ? user.photos.small : imgUrl}
-                alt="user-avatar"
-              />
+              <NavLink to={`/profile/${user.id}`}>
+                <img
+                  src={user.photos.small != null ? user.photos.small : imgUrl}
+                  alt="user-avatar"
+                />
+              </NavLink>
             </div>
             <div className="single-user__info">
               <h4 className="user-name">{user.name}</h4>
