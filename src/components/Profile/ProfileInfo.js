@@ -1,4 +1,5 @@
 import React from "react";
+import ProfileStatus from "./ProfileStatus";
 
 const ProfileInfo = ({ profile }) => {
   const img =
@@ -9,15 +10,20 @@ const ProfileInfo = ({ profile }) => {
 
   return (
     <div className="user-info">
+
       <div className="image-container">
         <img src={img} alt="content" />
       </div>
+
       <div className="user-data">
+
         <div className="user-avatar">
           <img src={profile.photos.large === null ? defaultImg : profile.photos.large} alt="user-avatar" />
         </div>
+
         <div className="info">
           <h2 className="user-name">{profile.fullName}</h2>
+          <ProfileStatus />
           <h3 className="about-me"> {profile.aboutMe} </h3>
         </div>
       </div>

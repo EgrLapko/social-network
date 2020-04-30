@@ -1,6 +1,9 @@
 import React from "react";
-import Spinner from "../common/Spinner/Spinner";
 import { NavLink } from "react-router-dom";
+import axios from "axios";
+
+import Spinner from "../common/Spinner/Spinner";
+import { usersAPI } from "../../api/api";
 
 export const Users = ({
   totalUsersCount,
@@ -8,8 +11,9 @@ export const Users = ({
   currentPage,
   onPageChanged,
   users,
-  followUser,
-  unfollowUser,
+  follow,
+  unfollow,
+  followingInProgress,
 }) => {
   const imgUrl =
     "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQGb5uSA6_aI3eO5D6KDXk-FlqBSVx2jngKy3b5eM3bpBOOCCgc&usqp=CAU";
@@ -61,12 +65,21 @@ export const Users = ({
             {user.followed ? (
               <button
                 className="btn selected"
-                onClick={() => unfollowUser(user.id)}
+                disabled={followingInProgress.some((id) => id === user.id)}
+                onClick={() => {
+                  unfollow(user.id);
+                }}
               >
                 Unfollow
               </button>
             ) : (
-              <button className="btn" onClick={() => followUser(user.id)}>
+              <button
+                className="btn"
+                disabled={followingInProgress.some((id) => id === user.id)}
+                onClick={() => {
+                  follow(user.id);
+                }}
+              >
                 Follow
               </button>
             )}
